@@ -9,14 +9,14 @@ export class RoomreservationService {
   roomReservation(newReserve){
     var headers=new Headers();
     headers.append('Content-type','application/json')
-    return this._http.post('http://localhost:8080/api/roomsave',newReserve,{headers:headers}).pipe(map(res=> res.json()))
+    return this._http.post('/api/roomsave',newReserve,{headers:headers}).pipe(map(res=> res.json()))
   }
   getAll(){
-    return this._http.get('http://localhost:8080/api/allreservation').pipe(map(res=>res.json()))
+    return this._http.get('/api/allreservation').pipe(map(res=>res.json()))
   }
   deleteReservation(body){
 
-    return this._http.delete('http://localhost:8080/api/deleteReservation/',body).pipe(map(res=> res.json()))
+    return this._http.delete('/api/deleteReservation/',body).pipe(map(res=> res.json()))
   }
 
 }
